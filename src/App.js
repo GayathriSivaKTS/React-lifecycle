@@ -1,23 +1,23 @@
 import logo from './logo.svg';
+import Count from './Component/Count';
+
+import ParentDept from './Component/ParentDept';
+import Header from './Component/Header';
+import Sample from './Component/Sample';
 import './App.css';
+import ParentlDept from './Component/ParentDept';
 
 function App() {
+  function getApp() {
+    const route = window.location.pathname;
+    if (route === "/state") return <Count />
+    else if (route === "/props") return <Sample name="Gayathri" id="610516104025" />
+    else return <ParentDept />
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container-Fluid">
+      <Header />
+      {getApp()}
     </div>
   );
 }
